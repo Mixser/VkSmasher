@@ -1,26 +1,30 @@
 <%=stylesheet_link_tag "user_smasher" %>
 <div class = "container-narrow" >
 <div class="jumbotron">
-        <h1>Choose the most beautiful girl</h1>
+        <h1>Fight!!!</h1>
         <div class = "row">
         	<div class ="col-md-6 col-md-3" >
 	        	<div class="thumbnail">
-	        		<img src ="http://placehold.it/300x200" />
+	        		<div class="crop">
+	        			<img src ="<%= @user_img_1 %>" />
+	        		</div>
 	        		<div class="caption">
 	        			<h3> №1 </h3>
-	        			<p class = "firstName"> Some text </p>
-	        			<p class = "lastName"> Some text </p>
+	        			<p class = "firstName"> <%= @user_1.firstName %> </p>
+	        			<p class = "lastName"> <%= @user_1.lastName %> </p>
 	        			<p><a href="#" class="btn btn-primary">Button</a></p>
 	        		</div>
 	        	</div>
 	        </div>
         	<div class ="col-md-6 col-md-3" >
 	        	<div class="thumbnail">
-	        		<img src ="http://placehold.it/300x200" />
+	        		<div class="crop">
+	        			<img src ="<%= @user_img_2 %>" />
+	        		</div>
 	        		<div class="caption">
 	        			<h3> №2 </h3>
-	        			<p class = "firstName"> Some text </p>
-	        			<p class = "lastName"> Some text </p>
+	        			<p class = "firstName"> <%= @user_2.firstName %></p>
+	        			<p class = "lastName"> <%= @user_2.lastName %> </p>
 	        			<p><a href="#" class="btn btn-primary">Button</a></p>
 	        		</div>
 	        	</div>
