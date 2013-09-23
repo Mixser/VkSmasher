@@ -3,12 +3,22 @@
 <head>
   <title>Vksmash</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag	 "bootstrap" %> 
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap"%>
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<%= render "layouts/menu" %>
+<div id = "wrap" >
+	
 
-<%= yield %>
+		<%= yield %>
+	
+</div>
+
+<%= render "layouts/footer" %>
+
 
 </body>
 </html>
