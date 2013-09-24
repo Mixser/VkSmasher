@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 			if @user.save 
 				format.html { redirect_to @user, notice: 'User was sucessfull created'}
 			else 
-				format.html { render action: "new"} 
+				format.html { redirect_to new_user_path, notice: 'User not be created!!! '} 
 			end
 		end
 	end

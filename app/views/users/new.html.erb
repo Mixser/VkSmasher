@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+    <div id="notice"><%= flash[:notice] %></div>
+<% end %>
 <div class="container-narrow">
 	<%= render "form" %>
 </div>
