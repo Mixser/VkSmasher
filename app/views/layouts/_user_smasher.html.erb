@@ -1,34 +1,19 @@
 <%=stylesheet_link_tag "user_smasher" %>
 <div class = "container-narrow" >
 <div class="jumbotron">
-        <h1>Fight!!!</h1>
+  
+        <h1><%=@users.count > 1 ? "Fight" : "Oops!"%></h1>
         <div class = "row">
-        	<div class ="col-md-6 col-md-3" >
-	        	<div class="thumbnail">
-	        		<div class="crop">
-	        			<img src ="<%= @user_img_1 %>" />
-	        		</div>
-	        		<div class="caption">
-	        			<h3> №1 </h3>
-	        			<p class = "firstName"> <%= @user_1.firstName %> </p>
-	        			<p class = "lastName"> <%= @user_1.lastName %> </p>
-	        			<p><a href="#" class="btn btn-primary">Button</a></p>
-	        		</div>
-	        	</div>
-	        </div>
-        	<div class ="col-md-6 col-md-3" >
-	        	<div class="thumbnail">
-	        		<div class="crop">
-	        			<img src ="<%= @user_img_2 %>" />
-	        		</div>
-	        		<div class="caption">
-	        			<h3> №2 </h3>
-	        			<p class = "firstName"> <%= @user_2.firstName %></p>
-	        			<p class = "lastName"> <%= @user_2.lastName %> </p>
-	        			<p><a href="#" class="btn btn-primary">Button</a></p>
-	        		</div>
-	        	</div>
-        	</div>
+          <% if @users.count  > 1 %> 
+            <% @users.each_with_index do |user, index| %>
+        	   <div class ="col-md-6 col-md-3" >
+    	        	<%= render user , :user => user, :photo => @photos[index]%>
+	           </div>
+            <% end %>
+          <% else %> 
+              <p> Очень мало контента, пожалуйста, добавьте нового пользователя </p>
+                  <p><%=link_to "Add user", new_user_path, :class => "btn btn-primary" %></p>
+          <% end %>
         </div>
 </div>
 </div>

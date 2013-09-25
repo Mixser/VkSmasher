@@ -1,3 +1,7 @@
-<% if @count > 1 %> 
-	<%= render "layouts/user_smasher" %>
+<% if session[:user].nil? || session[:user].empty? %>
+	<%= render "some_info" %>
 <% end %>
+
+  <%= render "layouts/user_smasher" %>
+
+  

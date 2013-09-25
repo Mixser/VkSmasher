@@ -1,0 +1,10 @@
+<% if session[:access_token].nil? %>
+<div class="row" id = "war">
+  <div class="col-lg-4"></div>
+<div class="alert alert-dismissable alert-danger col-lg-4" >
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  Обратите внимание, что если пользователь разрешил доступ к старнице, только определенным лицам, то вместо аватарок, может быть печальная собачка. Чтоб избежать этого, разрешите доступ к вашему акканту.
+</div>
+<div class="col-lg-4"></div>
+</div>
+<% end %>
